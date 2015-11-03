@@ -21,7 +21,7 @@ Features
 This utility brute-forces two-factor protected Wordpress dashboards by iterating
 through every possible 6-digit Google Authenticator TOTP token.
 
-WPBiff is meant to be used together with man-in-the-middle based attacks against NTP.
+WPBiff is meant to be used together with Main-in-the-Middle based attacks against NTP.
 
 Supported Plugins
 -----------------
