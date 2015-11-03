@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
 
-__all__ = ['wpbiff', ]
+__all__ = ['cli', ]
 
-from wpbiff import main
+from cli import main

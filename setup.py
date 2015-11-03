@@ -9,7 +9,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
 
 setup(
     name="wpbiff",
-    version="0.1.0",
+    version="0.1.1",
     author="Gabor Szathmari",
     author_email="gszathmari@gmail.com",
     packages=find_packages(exclude=['contrib', 'docs', 'tests*']),
@@ -19,11 +19,10 @@ setup(
     platforms = ["Linux"],
     description="Wordpress Two-Factor Authentication Brute-forcer",
     long_description=long_description,
-    entry_points={
-        'console_scripts': [
-            'wpbiff=wpbiff:main',
-        ],
-    },
+    entry_points='''
+        [console_scripts]
+        wpbiff=wpbiff.cli:main
+    ''',
     install_requires=[
         "click",
         "colorama",

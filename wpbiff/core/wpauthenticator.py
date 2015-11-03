@@ -1,8 +1,7 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from plugins.ga import GoogleAuthenticator
-from plugins.wpga import WPGoogleAuthenticator
+from wpbiff.plugins.ga import GoogleAuthenticator
+from wpbiff.plugins.wpga import WPGoogleAuthenticator
 
 class WPLogin:
     def __init__(self, url, username, password, user_agent):

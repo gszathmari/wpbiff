@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 import requests
@@ -7,7 +6,7 @@ import time
 from email.utils import parsedate
 from datetime import datetime, timedelta
 from progressbar import ProgressBar, Percentage, Bar, FormatLabel, Timer
-from core.wpauthenticator import WPLogin
+from wpbiff.core.wpauthenticator import WPLogin
 
 class BruteSession:
     def __init__(self, pinned_time, url, username, password, token, max_token, user_agent, plugin):
