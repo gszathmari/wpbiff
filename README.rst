@@ -8,10 +8,6 @@ Wordpress Two-Factor Authentication Brute-forcer
     :target: https://travis-ci.org/gszathmari/wpbiff
     :alt: Travis CI
 
-.. image:: https://img.shields.io/pypi/dm/wpbiff.svg
-   :target: https://pypi.python.org/pypi/wpbiff
-   :alt: PyPI
-
 .. image:: https://img.shields.io/requires/github/gszathmari/wpbiff.svg
    :target: https://requires.io/github/gszathmari/wpbiff/requirements/?branch=master
    :alt: Requirements Status
@@ -81,29 +77,36 @@ Options
 The following section explains the basic usage of WPBiff. You can also use
 the ``-h`` switch any time to get help.
 
--d, --date DATE        Pinned date (Format: "YYYY-MM-DD hh:mm") [required]
+-d, --date DATE        Pinned date (Format: "YYYY-MM-DD hh:mm")  [required]
 -u, --username USER    Wordpress username  [required]
 -p, --password PASS    Wordpress password  [required]
---plugin [ga|wpga]     Wordpress two-factor auth plugin type ("ga" or "wpga")
 -a, --user-agent       HTTP User-Agent header (default: Firefox)
 -t, --token TOKEN      Initial value of token (default: 000000)
 -m, --max-token TOKEN  Maximum token value (default: 999999)
--h, --help             Show this message and exit.
+
+Use the ``--plugin`` switch to choose between the Wordpress plugin type providing
+two-factor authentication for the target. Choose ``ga`` for
+`Google Authenticator`_ and ``wpga`` for `WP Google Authenticator`_.
+
+.. _Google Authenticator: https://wordpress.org/plugins/google-authenticator/
+.. _WP Google Authenticator: https://wordpress.org/plugins/wp-google-authenticator/
 
 Examples
 --------
 
-Assume you can intercept NTP traffic between your target and the NTP server it
-uses. By tampering with this traffic, you can "pin" the target's clock to a
+Assume NTP traffic can be intercepted between your target and the upstream NTP
+server. By tampering with this traffic, you can "pin" the target's clock to a
 certain time and date.
 
-Launch `Delorean`_ and fixate the target system to the current time and date ::
+Launch `Delorean`_ NTP server to serve a fixed time and date ::
 
   $ ./delorean.py -d "2015-10-30 11:22"
 
 .. _Delorean: https://github.com/PentesterES/Delorean
 
-Now launch WPBiff as the following ::
+Redirect NTP traffic from your target to the fake NTP server.
+
+Finally launch WPBiff as the following ::
 
   $ wpbiff -u admin -p admin -d "2015-10-30 11:22" --plugin ga "http://www.example.com"
 
@@ -132,7 +135,6 @@ Contributors
 
 Credits
 =======
-
 
 * `Delorean`_ NTP Main-in-the-Middle tool
 
