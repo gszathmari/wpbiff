@@ -46,7 +46,7 @@ def controller(args):
         1. You must be able to manipulate the server time (e.g. NTP MitM with Delorean)
         2. You must know the Wordpress login username and password
 
-    More info: https://github.com/gszathmari/wpbiff/wiki
+    More info: https://github.com/gszathmari/wpbiff/blob/master/README.rst
     """
     result = None
     banner()

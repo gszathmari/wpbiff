@@ -12,9 +12,6 @@ Wordpress Two-Factor Authentication Brute-forcer
    :target: https://requires.io/github/gszathmari/wpbiff/requirements/?branch=master
    :alt: Requirements Status
 
-.. image:: https://img.shields.io/pypi/pyversions/wpbiff.svg
-   :alt: Python Versions
-
 Features
 ========
 
@@ -67,7 +64,7 @@ I recommend `Delorean`_ to fixate the server time to a certain point. You must
 fixate an arbitrary date with the ``-d`` flag with Delorean and use the
 very same time stamp with WPBiff in parallel.
 
-For more information on remote clock tampering, please refer to this blog entry (coming soon).
+For more information on remote clock tampering, please refer to this blog entry *(coming soon)*.
 
 .. _Delorean: https://github.com/PentesterES/Delorean
 
@@ -116,10 +113,38 @@ This session will brute force Wordpress on ``www.example.com`` with the login us
 Once the process finishes, WPBiff dumps the valid token and the session cookies
 for accessing the Wordpress dashboard.
 
+Speed
+=====
+
+If the clock on the target Wordpress site reverts to the same time and date
+every minute (e.g. ntpdate runs minutely), three parallel instances of WBiff is
+capable to find the TOTP token in about an hour.
+
+Synthetic Test Results
+----------------------
+
+========= ======== ======== ========
+Test      WPBiff 1 WPBiff 2 WPBiff 3
+========= ======== ======== ========
+Session 1 57m      141m     n.a.
+Session 2 51m      46m      n.a.
+Session 3 102m     83m      n.a.
+========= ======== ======== ========
+
+Where **WPBiff 1**, **2** and **3** were covering different ranges within
+all possible combinations of 6-digit tokens ::
+
+  ubuntu@wpbiff1:~$ wpbiff -t 000000 -m 333333 ...
+
+  ubuntu@wpbiff2:~$ wpbiff -t 333334 -m 666666 ...
+
+  ubuntu@wpbiff3:~$ wpbiff -t 666667 -m 999999 ...
+
+
 Links
 =====
 
-* Blog entry with detailed walkthrough (coming soon)
+* Blog entry with detailed walkthrough *(coming soon)*
 * `Source code on GitHub`_
 * `Package on PyPI`_
 
@@ -136,6 +161,6 @@ Contributors
 Credits
 =======
 
-* `Delorean`_ NTP Main-in-the-Middle tool
+* `Delorean`_: NTP Main-in-the-Middle tool
 
 .. _Delorean: https://github.com/PentesterES/Delorean
