@@ -1,0 +1,5 @@
+include CHANGELOG.md
+include README.rst
+include MANIFEST.in
+include LICENSE
+recursive-include wpbiff *

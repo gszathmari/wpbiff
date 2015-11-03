@@ -1,0 +1,15 @@
+language: python
+
+python:
+  - '2.7'
+
+install: pip install -r requirements.txt
+
+deploy:
+  provider: pypi
+  user: gszathmari
+  password:
+    secure: rIjLmPv98iuh+lbqBP9NIl3TilVHdKTGgYN5zdNbl4m/TlQf9qmc7BmGPzJNRqlgiW2O2NRrNSbDKmtxiO1zDtEPbxBRm3BgFmF11fauYcxx9K0mhCCxDAmZ4jnzLd7MZ6BD3hPVih6fXj9FJkWA957xJk6tw5Ii9spaVX6x6APjpqK21ZWI1mRqfd8hfK6PchPGqRe1ehBhtStb0g0pQ/E1BZs0YIJzs6xS0YtqVULvq9zYWROp2NHMlfiNFM0Hyn88WncvVfgIRulGU9TEMzinggd4RkcCqtCiPR/S4/RxWaKme3uH3pSd5uXaFE8ABAuai1lLAbf8dWDbLW09ANGtZN22aaIAsogGwg1xs9YY/XMIzmB2SbsWT1WXnehiQJrf7tixA/LGmvYuNZFtfaf2uyjecV0RO2HIXbRJy7ICVcq56Ui7C18GfNMsNQMzvmsiML8GOL/Lm7Z59c0C0ZYEGi5vJ6+WDU589TQ9304oRa6zS4fV0zJv/pDwqr82h42eCmputIbHjwOVKLZ/ozZTs+oVJ9IFsU2RCYeMs55JKeaolME1UeiNxPVXzVnJcRhWCVHOew+RKZF4uGu0kKLUJNNrteuYmpAKLczCKTnf/hTvd9PO1lS4jkocdh6KD3FwlIOZUlwkuf3kc6J0L90IOVblUkE7ZXfNX8HV77E=
+  distributions: sdist bdist_wheel
+  on:
+    tags: true
