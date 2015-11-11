@@ -64,8 +64,9 @@ I recommend `Delorean`_ to fixate the server time to a certain point. You must
 fixate an arbitrary date with the ``-d`` flag with Delorean and use the
 very same time stamp with WPBiff in parallel.
 
-For more information on remote clock tampering, please refer to this blog entry *(coming soon)*.
+For more information on remote clock tampering, please refer to this `blog entry`_
 
+.. _blog entry: https://blog.gaborszathmari.me/2015/11/11/bypassing-wordpress-login-pages-with-wpbiff/
 .. _Delorean: https://github.com/PentesterES/Delorean
 
 Options
@@ -144,10 +145,11 @@ all possible combinations of 6-digit tokens ::
 Links
 =====
 
-* Blog entry with detailed walkthrough *(coming soon)*
+* Blog entry with `detailed walkthrough`_
 * `Source code on GitHub`_
 * `Package on PyPI`_
 
+.. _detailed walkthrough: https://blog.gaborszathmari.me/2015/11/11/bypassing-wordpress-login-pages-with-wpbiff/
 .. _Source code on GitHub: https://github.com/gszathmari/wpbiff
 .. _Package on PyPI: https://pypi.python.org/pypi/wpbiff
 
